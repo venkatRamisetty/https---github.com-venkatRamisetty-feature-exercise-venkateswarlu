@@ -66,13 +66,11 @@ if ($item == 'C'){
 }
 
 if ($item == 'D'){	
-//echo $count;
-$Aitemcount=isset($Aitemcount)? isset($Aitemcount):'';
-    if($Aitemcount > $count){$Dcount=$Aitemcount-$count;}else{ $Dcount=$count-$Aitemcount;}	
-	if($count){ $Dprice= $Aitemcount*5 + $Dcount*15; }  
-    $subtotal=$Dprice;
+$Aitemcount=isset($Aitemcount)? $Aitemcount:'';
+    if($Aitemcount > $count){$Dcount=$Aitemcount-$count;$Dprice= $count*5;}
+  else{ $Dcount=$count-$Aitemcount; $Dprice= $Aitemcount*5 + $Dcount*15; }	
+ $subtotal=$Dprice;
 }
-
 if ($item == 'E'){			
 	$subtotal= $count*$rebatesE[1];   
   //  echo $Eprice;
